@@ -16,21 +16,54 @@ Claude Code의 설정(Hooks, Agents, Skills, Commands, MCP 등)을 재사용 가
 
 ## 빠른 시작
 
-### 1. 글로벌 설정 설치
+### 방법 1: 서브모듈로 프로젝트에 추가 (추천)
+
+기존 프로젝트에 이 템플릿을 서브모듈로 추가하면, 템플릿 업데이트를 쉽게 동기화할 수 있습니다.
+
+```bash
+# 프로젝트 루트에서 서브모듈 추가
+cd /path/to/your/project
+git submodule add https://github.com/nakkulla/claude-code-template.git .claude-template
+
+# 서브모듈 초기화 (클론한 경우)
+git submodule update --init --recursive
+```
+
+**서브모듈 추가 후 설정 연결:**
+
+```bash
+# 프로젝트 .claude 폴더 생성 및 설정 복사
+mkdir -p .claude
+cp .claude-template/project/CLAUDE.md .claude/
+cp .claude-template/project/settings.json .claude/
+cp .claude-template/project/.mcp.json .mcp.json
+
+# 또는 심볼릭 링크 사용 (템플릿 변경 시 자동 반영)
+ln -s ../.claude-template/project/CLAUDE.md .claude/CLAUDE.md
+```
+
+**서브모듈 업데이트:**
+
+```bash
+# 최신 템플릿으로 업데이트
+git submodule update --remote .claude-template
+```
+
+### 방법 2: 글로벌 설정 설치
 
 ```bash
 # 저장소 클론
-git clone https://github.com/YOUR_USERNAME/claude-code-template.git
+git clone https://github.com/nakkulla/claude-code-template.git
 cd claude-code-template
 
 # 설치 스크립트 실행
 ./scripts/install.sh
 ```
 
-### 2. 프로젝트 설정 초기화
+### 방법 3: 프로젝트 설정 초기화 (복사)
 
 ```bash
-# 새 프로젝트에 설정 적용
+# 새 프로젝트에 설정 복사
 ./scripts/init-project.sh /path/to/your/project
 ```
 
