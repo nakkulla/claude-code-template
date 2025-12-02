@@ -1,0 +1,51 @@
+{
+  "permissions": {
+    "allow": [
+      "*"
+    ],
+    "defaultMode": "bypassPermissions",
+    "askBeforeRunning": false
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "context7",
+    "sequential-thinking"
+  ],
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/ntfy-hook.sh",
+            "timeout": 5000
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/auto-commit-push.sh",
+            "timeout": 60000
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/ntfy-hook.sh",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "npx -y ccusage@latest statusline",
+    "padding": 0
+  },
+  "alwaysThinkingEnabled": false
+}

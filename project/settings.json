@@ -1,0 +1,60 @@
+{
+  "permissions": {
+    "allow": [
+      "*",
+      "Bash(curl:*)",
+      "WebFetch(domain:ntfy.sh)"
+    ],
+    "defaultMode": "bypassPermissions",
+    "askBeforeRunning": false
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "context7",
+    "sequential-thinking"
+  ],
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/scripts/session-start-hook.sh",
+            "timeout": 5000
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/scripts/ntfy-hook.sh",
+            "timeout": 10000
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/scripts/ntfy-hook.sh",
+            "timeout": 10000
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "npx -y ccusage@latest statusline",
+    "padding": 0
+  },
+  "alwaysThinkingEnabled": true
+}

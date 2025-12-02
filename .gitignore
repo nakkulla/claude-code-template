@@ -1,0 +1,30 @@
+# API 키 및 자격증명
+*.credentials.json
+**/secrets/
+.env
+.env.*
+
+# 로그 파일
+*.log
+logs/
+
+# Claude Code 자동 생성 파일
+claude_setting/
+session-env/
+debug/
+file-history/
+projects/
+shell-snapshots/
+todos/
+statsig/
+plans/
+history.jsonl
+
+# OS 파일
+.DS_Store
+Thumbs.db
+
+# 임시 파일
+*.tmp
+*.temp
+*~
