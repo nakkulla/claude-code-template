@@ -1,0 +1,8 @@
+#!/bin/bash
+# Discord Webhook Configuration
+# 이 파일을 discord-config.sh로 복사하고 실제 값을 입력하세요
+# discord-config.sh는 .gitignore에 추가되어 있습니다
+
+DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN"
+DISCORD_USER_ID="YOUR_DISCORD_USER_ID"
+DISCORD_USER_MENTION="<@YOUR_DISCORD_USER_ID>"

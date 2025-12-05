@@ -1,15 +1,15 @@
 {
   "permissions": {
-    "allow": [
-      "*"
-    ],
+    "allow": ["*"],
     "defaultMode": "bypassPermissions",
     "askBeforeRunning": false
   },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "context7",
-    "sequential-thinking"
+    "sequential-thinking",
+    "perplexity",
+    "github"
   ],
   "hooks": {
     "Notification": [
@@ -18,7 +18,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/ntfy-hook.sh",
+            "command": "~/.claude/discord-hook.sh",
             "timeout": 5000
           }
         ]
@@ -30,12 +30,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/auto-commit-push.sh",
-            "timeout": 60000
-          },
-          {
-            "type": "command",
-            "command": "~/.claude/ntfy-hook.sh",
+            "command": "~/.claude/discord-hook.sh",
             "timeout": 5000
           }
         ]

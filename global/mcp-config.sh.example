@@ -1,0 +1,7 @@
+#!/bin/bash
+# MCP API Keys - Claude Code MCP 서버 환경변수
+# 이 파일을 mcp-config.sh로 복사하고 실제 값을 입력하세요
+# mcp-config.sh는 .gitignore에 추가되어 있습니다
+
+export PERPLEXITY_API_KEY="pplx-YOUR_API_KEY"
+export GITHUB_PERSONAL_ACCESS_TOKEN="github_pat_YOUR_TOKEN"

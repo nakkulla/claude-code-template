@@ -3,6 +3,8 @@
 **/secrets/
 .env
 .env.*
+mcp-config.sh
+discord-config.sh
 
 # 로그 파일
 *.log
